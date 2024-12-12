@@ -1,7 +1,7 @@
 package config
 
 import (
-	handler "github.com/abdulmalikraji/go-kafka-project/producer/Handler"
+	"github.com/abdulmalikraji/go-kafka-project/producer/handler"
 	"github.com/abdulmalikraji/go-kafka-project/producer/services"
 	"github.com/gofiber/fiber/v2"
 )
