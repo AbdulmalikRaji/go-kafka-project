@@ -45,13 +45,7 @@ func (s commentController) CreateComment(c *fiber.Ctx) error {
 		})
 	}
 
-	s.service.PushCommentToQueue("comment", commentInBytes)
-
-	err = c.JSON(&fiber.Map{
-		"success": true,
-		"message": "comment added successfully",
-		"data":    comment,
-	})
+	err = s.service.PushCommentToQueue("comment", commentInBytes)
 
 	if err != nil {
 		log.Println(err)
@@ -61,6 +55,14 @@ func (s commentController) CreateComment(c *fiber.Ctx) error {
 			"data":    nil,
 		})
 	}
+
+	err = c.JSON(&fiber.Map{
+		"success": true,
+		"message": "comment added successfully",
+		"data":    comment,
+	})
+
+	
 
 	return err
 }
