@@ -8,9 +8,15 @@ import (
 	"syscall"
 
 	"github.com/IBM/sarama"
+	"github.com/joho/godotenv" 
 )
 
 func main() {
+
+	err := godotenv.Load()
+    if err != nil {
+        log.Println("Error loading .env file:", err)
+    }
 
 	topic := os.Getenv("TOPIC")
 	worker, err := connectConsumer([]string{os.Getenv("BROKER_URL")})
