@@ -5,6 +5,7 @@ go 1.22.5
 require (
 	github.com/IBM/sarama v1.43.3
 	github.com/gofiber/fiber/v2 v2.52.5
+	github.com/joho/godotenv v1.5.1
 )
 
 require (
